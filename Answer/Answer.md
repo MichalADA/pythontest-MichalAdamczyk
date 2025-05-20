@@ -2,8 +2,9 @@
 
 ### 1. What is `__main__.py` used for?
 
-`__main__.py` is used as the entry point for a Python package when it is executed as a script using `python -m package_name`.  
+__main__.py is used as the entry point for a Python package when it is executed as a script using `python -m package_name`.  
 It contains the main logic of the application and is executed by the interpreter when the package is run.
+
 
 ---
 
