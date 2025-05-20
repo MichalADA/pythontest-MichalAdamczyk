@@ -220,17 +220,20 @@ curl -X GET "https://d60eh9l118.execute-api.us-east-1.amazonaws.com/prod/users/a
 
  The age field in DynamoDB is stored as a Decimal, so without a proper encoder, the API would throw:" Object of type Decimal is not JSON serializable".
 
-###  Problems Encountered & Fixes
-    -- The AWS region had to be set manually (REGION="us-east-1") because aws configure get region returned an empty value in my shell environment.
-    -- Although the API was deployed via CLI, I still had to manually confirm the deployment via the AWS Console by clicking “Deploy API” to make it fully operational.
+### Problems Encountered & Fixes
 
-    -- The GET function needed to be modified to fix the serialization issue with DynamoDB’s Decimal type.
+- The AWS region had to be set manually (REGION="us-east-1") because aws configure get region returned an empty value in my shell environment.
+- Although the API was deployed via CLI, I still had to manually confirm the deployment via the AWS Console by clicking "Deploy API" to make it fully operational.
+- The GET function needed to be modified to fix the serialization issue with DynamoDB's Decimal type.
 
 ### Approach
-    The entire project — including creating the DynamoDB table, IAM role, Lambda functions, API Gateway configuration, permissions, and deployment — was implemented entirely via AWS CLI.
-    I chose CLI over the web console because I feel more confident in the terminal and find it easier to debug and understand what is happening under the hood.
+
+The entire project — including creating the DynamoDB table, IAM role, Lambda functions, API Gateway configuration, permissions, and deployment — was implemented entirely via AWS CLI.
+
+I chose CLI over the web console because I feel more confident in the terminal and find it easier to debug and understand what is happening under the hood.
 
 ## API URL for Testing
 
 https://d60eh9l118.execute-api.us-east-1.amazonaws.com/prod/
+
 d60eh91118.execute-api.us-east-1.amazonaws.com
